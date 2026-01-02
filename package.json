@@ -1,0 +1,25 @@
+{
+  "name": "node-practise",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AyushBansal88/node-practise#readme",
+  "bugs": {
+    "url": "https://github.com/AyushBansal88/node-practise/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyushBansal88/node-practise.git"
+  },
+  "license": "ISC",
+  "author": "Ayush Bansal",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
