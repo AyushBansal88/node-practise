@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejs file</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="bg-zinc-900 text-white p-5">
+    <form action="/create" method="post" class="flex flex-col gap-5">
+        <input class="p-4 border-0 bg-zinc-800 w-full" type="text" name="title" placeholder="enter the title">
+        <textarea class="p-4 border-0 bg-zinc-800 w-full" name="description" placeholder="enter the description"></textarea>
+        <button class="p-4 bg-blue-500" type="submit">create task</button>
+    </form>
+    <div class="task container pt-5 flex flex-row gap-5 flex-wrap">
+        <% if(files.length > 0) { %>
+             <% files.forEach(function(val){ %>
+                <div class="task bg-zinc-800 p-4 w-80">
+                    <h3>
+                        <%= val %>
+                    </h3>
+                    <a href="/file/<%= val %>" class="text-blue-500 block">read more...</a>
+                    <a href="/edit/<%= val %>" class="text-orange-500">edit</a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h3 class="text-zinc-600">no tasks yet</h3>
+        <% } %>
+    </div>
+</body>
+</html>

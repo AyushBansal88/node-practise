@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="bg-zinc-900 text-white p-5">
+    <a class="text-blue-500 inline-block mb-3" href="/">go back</a>
+    <form action="/edit" method="post" class="flex flex-col gap-5">
+        <input class="p-4 border-0 bg-zinc-800 w-full" type="text" name="previous_name" value="<%= filename %>">
+        <input class="p-4 border-0 bg-zinc-800 w-full" type="text" name="new_name" placeholder="enter new name">
+        <button class="p-4 bg-yellow-500" type="submit">Rename</button>
+    </form>
+</body>
+</html>
