@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit USer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="p-4 bg-zinc-900">
+    <h1 class="text-white text-2xl">Create User</h1>
+    <form class="pt-5" action="/update/<%= user._id%>" method="post">
+        <input class="bg-zinc-700 p-4 outline-0 text-white rounded" type="text" placeholder="enter name" name="name" value="<%= user.name%>">
+        <input class="bg-zinc-700 p-4 outline-0 text-white rounded" type="email" placeholder="enter email" name="email" value="<%= user.email%>">
+        <input class="bg-zinc-700 p-4 outline-0 text-white rounded" type="text" placeholder="enter image url" name="image" value="<%= user.image%>">
+        <button class="bg-yellow-500 p-4 text-white rounded" type="submit">Update User</button>
+    </form>
+</body>
+</html>
