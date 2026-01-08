@@ -101,7 +101,7 @@ app.post('/verifyotp', async function(req, res){
 })
 
 app.get('/dashboard', authLogin,  async function(req, res){
-  res.render('dashboard')
+  res.render('dashboard', {name: req.user.username})
 })
 
 app.post('/login', async function(req, res){

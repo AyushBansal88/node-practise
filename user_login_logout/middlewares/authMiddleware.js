@@ -9,6 +9,7 @@ async function authLogin(req, res, next){
     const ans = jwt.verify(token, 'demokey');
     let user = await userModel.findOne({_id: ans.id})
     if(user.isAuthorized === true){
+        req.user = user;
         return next()
     }
     else{
