@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 text-white p-10">
+        <h3 class="text-3xl pb-4">Verify OTP</h3>
+        <form method="post" action="/verifyotp">
+            <input class="px-3 py-2 border-2 rounded-md bg-transparent border-zinc-800 outline-none" type="number                                                                                                                                       " name="otp" placeholder="OTP">
+            <input class="px-4 py-2 rounded-md bg-blue-500" type="submit" value="Verify OTP">
+        </form>
+    </div>
+</body>
+</html>
