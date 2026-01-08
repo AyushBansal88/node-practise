@@ -55,6 +55,23 @@ app.get('/login', function(req, res){
   res.render('login')
 })
 
+app.post('/login', async function(req, res){
+  let {email, password} = req.body;
+  let user = await userModel.findOne({email})
+  const isMatch = await bcrypt.compare(password, user.password)
+  if(isMatch){
+    let token = jwt.sign({id: user._id}, 'demokey');
+    res.cookie('token', token);
+    user.isAuthorized = true;
+    await user.save();
+    res.redirect('/dashboard')
+  }
+  else{
+      console.log('password does not match');
+      res.redirect('/login')
+  }       
+})
+
 app.put('/verifyotp', async function(req, res){
   try {
     let email = req.body.email;
