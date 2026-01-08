@@ -14,7 +14,11 @@ const userSchema = mongoose.Schema({
     },
     password: String,
     age: Number,
-    otp: Number
+    otp: Number,
+    isAuthorized:{
+        type: Boolean,
+        default: false
+    }
 })
 
 module.exports = mongoose.model('user', userSchema);

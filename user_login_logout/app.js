@@ -3,11 +3,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const userModel = require('./models/user');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const randomstring = require('randomstring')
 const methodOverride = require('method-override');
-const authLogin = require('./middlewares/authMiddleware')
+const authLogin = require('./middlewares/authMiddleware');
 
 app.set('view engine', 'ejs');
 app.use(express.json());
@@ -47,7 +47,6 @@ app.post('/create', function(req, res){
   }
 })
 
-
 app.get('/reqotp', function(req, res){
   res.render('requestOtp');
 })
@@ -74,6 +73,8 @@ app.post('/verifyotp', async function(req, res){
     let user = await userModel.findOne({_id: ans.id})
     let otp = req.body.otp; 
     if(user.otp == Number(otp)){
+      user.isAuthorized = true;
+      await user.save();
       res.redirect('/dashboard')
     }
     res.send('inavalid OTP')
@@ -85,8 +86,6 @@ app.post('/verifyotp', async function(req, res){
 app.get('/dashboard', authLogin,  async function(req, res){
   res.render('dashboard')
 })
-
-
 
 app.post('/login', async function(req, res){
   let user = await userModel.findOne({email: req.body.email})
@@ -102,11 +101,15 @@ app.post('/login', async function(req, res){
   })
 })
 
-app.get('/logout', function(req, res){
+app.get('/logout', async function(req, res){
+  const token = req.cookies.token
+  const ans = jwt.verify(token, 'demokey');
+  let user = await userModel.findOne({_id: ans.id})
+  user.isAuthorized = false;
+  await user.save();
   res.cookie('token', '');
   res.redirect('/');
 })
-
 
 app.listen(3000, function(err){
   console.log('server listining on port 3000');
