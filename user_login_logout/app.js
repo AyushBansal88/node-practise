@@ -100,9 +100,9 @@ app.post('/verifyotp', async function(req, res){
     if(user.otp == Number(otp)){
       user.isAuthorized = true;
       await user.save();
-      res.redirect('/dashboard')
+      return res.redirect('/dashboard')
     }
-    res.send('inavalid OTP')
+    return res.send('inavalid OTP')
   } catch (error) {
     return res.status(400).json(error)
   }
