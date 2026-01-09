@@ -38,7 +38,11 @@ app.post('/create', function(req, res){
         })
 
         let token = jwt.sign({id: createdUser._id}, 'demokey');
-        res.cookie('token', token);
+        res.cookie('token', token, {
+          httpOnly: true,
+          secure: true,
+          maxAge: 7 * 24 * 60 * 60 * 1000
+        });
         res.redirect('/reqotp');    
       })
     })
@@ -61,7 +65,11 @@ app.post('/login', async function(req, res){
   const isMatch = await bcrypt.compare(password, user.password)
   if(isMatch){
     let token = jwt.sign({id: user._id}, 'demokey');
-    res.cookie('token', token);
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: true,
+      maxAge: 7 * 24 * 60 * 60 * 1000
+    });
     user.isAuthorized = true;
     await user.save();
     res.redirect('/dashboard')
@@ -111,7 +119,11 @@ app.post('/login', async function(req, res){
   bcrypt.compare(req.body.password, user.password, function(err, result){
     if(result){
       let token = jwt.sign({email: user.email}, 'demokey');
-      res.cookie('token', token);
+      res.cookie('token', token, {
+        httpOnly: true,
+        secure: true,
+        maxAge: 7 * 24 * 60 * 60 * 1000
+      });
       res.send('Succesfully login')
     } 
     else res.send('Email or Password Incorrect..')
