@@ -11,7 +11,6 @@ exports.createUser = async (req, res) =>{
         })
     }
     let checkuser = await userModel.findOne({email});
-    console.log(checkuser);
     if(checkuser != null){
         return res.status(400).json({
           success: false,
