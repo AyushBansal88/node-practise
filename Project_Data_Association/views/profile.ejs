@@ -12,7 +12,7 @@
     </div>
     <h3 class="text-3xl">Hello <%= user.name %> 👍</h3>
     <span class="block">you can create a new post</span>
-    <form action="/create/post" method="post">
+    <form action="/post/create" method="post">
       <textarea class="border rounded-md border-zinc-500 mt-3 p-3 resize-none w-1/3" name="content" placeholder="What's on your mind ?"></textarea>
       <input class="bg-blue-500 px-5 py-2 rounded-md block" type="submit" value="Create New Post">
     </form>
@@ -23,8 +23,8 @@
         <%= post.content %>
         <h6><%= post.like.length %> Likes</h6>
         <div>
-          <a href="/like/post/<%= post._id %>" class="text-blue-500"><%= post.like.indexOf(user._id) ? "like" : "unlike" %></a>
-          <a href="/edit/post/<%= post._id %>" class="text-zinc-500">edit</a>
+          <a href="/post/like/<%= post._id %>" class="text-blue-500"><%= post.like.indexOf(user._id) ? "like" : "unlike" %></a>
+          <a href="/post/edit/<%= post._id %>" class="text-zinc-500">edit</a>
         </div>
       </div>
     <% }) %>
