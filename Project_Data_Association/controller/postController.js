@@ -18,7 +18,7 @@ exports.createPost = async (req, res) => {
     message:error.message
     })
   }
-}
+};
 
 exports.likePost = async (req, res) => {
   try {
@@ -38,7 +38,7 @@ exports.likePost = async (req, res) => {
       message:error.message
     })
   }
-}
+};
 
 exports.editPost = async (req, res) => {
   try {
@@ -50,7 +50,7 @@ exports.editPost = async (req, res) => {
       message:error.message
     })
   }
-}
+};
 
 exports.updatePost = async (req, res) => {
   try {
@@ -62,4 +62,4 @@ exports.updatePost = async (req, res) => {
       message:error.message
     })
   } 
-}
+};
