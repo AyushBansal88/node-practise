@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
@@ -16,8 +17,8 @@ app.use("/post", postRoute);
 async function startServer(){
   try {
     await connectDB();
-    app.listen(3000, function (err) {
-      console.log("server listining on port 3000");
+    app.listen(process.env.PORT, function (err) {
+      console.log(`server listining on port ${process.env.PORT}`);
     });
   } catch (error) {
     console.error('Failed to start server:', error.message);

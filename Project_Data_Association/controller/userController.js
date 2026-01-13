@@ -37,7 +37,7 @@ exports.signUp = async (req, res) => {
       email,
       password: hash,
     });
-    let token = jwt.sign({ id: user._id }, "secretkey");
+    let token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.cookie("token", token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
@@ -71,7 +71,7 @@ exports.validateLogin = async (req, res) => {
     if(user){
       const check = await bcrypt.compare(password, user.password);
       if(check){
-      const token = jwt.sign({id: user._id}, "secretkey");
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
       res.cookie("token", token, {
         maxAge: 7 * 24 * 60 * 60 * 1000,
       });

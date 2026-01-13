@@ -7,7 +7,7 @@ async function checkLogin(req, res, next){
     if (token == "") {
       return res.redirect("/login");
     }
-    const data = jwt.verify(token, "secretkey");
+    const data = jwt.verify(token, process.env.JWT_SECRET);
     const user = await userModel.findOne({ _id: data.id });
     if (user != null) {
       req.user = user;
