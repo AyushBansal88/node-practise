@@ -8,7 +8,7 @@ exports.signup = (req, res) => {
 };
 
 exports.createuser = async (req, res) => {
-  try {
+  try { 
     let { name, username, email, password } = req.body;
     if(!name || !username || !email || !password){
       return res.send('all feilds are required');

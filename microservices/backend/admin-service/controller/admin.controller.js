@@ -4,11 +4,11 @@ const hashPassword = require("../utils/hash-password");
 const validatePassword = require("../utils/validate-password");
 
 exports.login = (req, res) => {
-    res.render('login')
+  res.render('login')
 }
 
 exports.signup = (req, res) => {
-    res.render('signup')
+  res.render('signup')
 }
 
 exports.createadmin = async (req, res) => {
