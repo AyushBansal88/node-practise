@@ -10,8 +10,9 @@ app.set('view engine', 'ejs')
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/', userRoutes);
 app.use(cors());
+
+app.use('/', userRoutes);
 
 async function startServer() {
   try {

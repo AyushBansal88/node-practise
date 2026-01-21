@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gateway</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="w-full min-h-screen bg-zinc-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <a
+          href="/admin/profile"
+          class="p-8 bg-blue-600 hover:bg-blue-700 rounded-lg transition"
+        >
+          <h2 class="text-2xl font-bold mb-2">Admin Panel</h2>
+          <p class="text-gray-200">Manage users and system settings</p>
+        </a>
+        <a
+          href="/user/profile"
+          class="p-8 bg-green-600 hover:bg-green-700 rounded-lg transition"
+        >
+          <h2 class="text-2xl font-bold mb-2">User Dashboard</h2>
+          <p class="text-gray-200">Access your account and services</p>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

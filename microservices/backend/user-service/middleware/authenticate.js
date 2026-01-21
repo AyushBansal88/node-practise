@@ -5,7 +5,7 @@ async function authenticate(req, res, next) {
   try {
     const token = req.cookies.token;
     if (token == "") {
-      return res.redirect("/");
+      return res.redirect("/user");
     }
     const data = jwt.verify(token, process.env.JWT_SECRET);
     const user = await userModel.findOne({ _id: data.id });
@@ -13,7 +13,7 @@ async function authenticate(req, res, next) {
       req.user = user;
       return next();
     }
-    return res.redirect("/");
+    return res.redirect("/user");
   } catch (error) {
     return res.status(500).json({
       success: false,
