@@ -9,5 +9,5 @@ module.exports = (app) => {
         return proxyReqOpts;
       },
     }),
-      );
+  );
 };

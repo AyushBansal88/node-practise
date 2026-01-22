@@ -15,7 +15,7 @@ userProxy(app);
 postProxy(app);
 
 app.get('/', (req, res)=> {
-  res.send('hi');
+  res.send('response from api gateway');
 })
 
 app.listen(process.env.PORT, () => {
