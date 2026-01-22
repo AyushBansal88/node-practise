@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
-const connectDB = require('./config/db');
+const connectDB = require('./config/postDB');
 
 app.use(cors());
 app.use(morgan('dev'));
