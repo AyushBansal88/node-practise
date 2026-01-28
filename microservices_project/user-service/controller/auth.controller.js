@@ -63,6 +63,8 @@ exports.validateLogin = async (req, res) => {
   }
 }
 
-exports.dashboard = (req, res) => {
-  res.send(req.headers['x-user-role']);  
+exports.dashboard = async (req, res) => {
+  let user = await userModel.findOne({_id:req.headers['x-user-id']});
+  // res.send(user);
+  res.render('dashboard' ,{user:user})
 }

@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const connectDB = require('./config/postDB');
 const postRouter = require('./routes/post.routes');
 
+app.set('view engine', 'ejs');
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());

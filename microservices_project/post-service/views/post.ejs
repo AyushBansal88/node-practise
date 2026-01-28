@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #f1f5f9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-600">Post Feed</h1>
+    <div class="flex items-center gap-4">
+      <span class="text-gray-600">Welcome, Ayush</span>
+      <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+        Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto p-6 space-y-6">
+
+    <!-- Single Post -->
+    <div class="bg-white rounded-xl shadow p-6">
+      
+      <!-- User Info -->
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold">
+          A
+        </div>
+        <div>
+          <h3 class="font-semibold">Ayush Bansal</h3>
+          <p class="text-sm text-gray-500">Full Stack Developer</p>
+        </div>
+      </div>
+
+      <!-- Post Content -->
+      <p class="text-gray-700 mb-4">
+        Just finished building my API Gateway with JWT authentication and SSR support 🚀  
+        Learned a lot about microservices and security.
+      </p>
+
+      <!-- Post Meta -->
+      <div class="flex justify-between items-center text-sm text-gray-500">
+        <span>Posted on Jan 27, 2026</span>
+        <div class="flex gap-4">
+          <button class="hover:text-indigo-600">👍 Like</button>
+          <button class="hover:text-indigo-600">💬 Comment</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Another Post -->
+    <div class="bg-white rounded-xl shadow p-6">
+      
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
+          R
+        </div>
+        <div>
+          <h3 class="font-semibold">Rahul Sharma</h3>
+          <p class="text-sm text-gray-500">Backend Engineer</p>
+        </div>
+      </div>
+
+      <p class="text-gray-700 mb-4">
+        MongoDB + Mongoose `.lean()` is a game changer for SSR performance 💡  
+        Highly recommended for anyone doing server-side rendering.
+      </p>
+
+      <div class="flex justify-between items-center text-sm text-gray-500">
+        <span>Posted on Jan 26, 2026</span>
+        <div class="flex gap-4">
+          <button class="hover:text-indigo-600">👍 Like</button>
+          <button class="hover:text-indigo-600">💬 Comment</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-4">
+    © 2026 Acoustte Digital Services
+  </footer>
+
+</body>
+</html>

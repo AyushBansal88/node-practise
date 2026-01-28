@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS (optional, inside same file) -->
+  <style>
+    body {
+      background: linear-gradient(to right, #eef2ff, #f8fafc);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-600">User Dashboard</h1>
+    <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+      Logout
+    </button>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto p-6">
+
+    <!-- Welcome Card -->
+    <div class="bg-white rounded-xl shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Welcome, <%= user.username %> 👋</h2>
+      <p class="text-gray-600">
+        Here’s what’s happening with your account today.
+      </p>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-gray-500">Projects</h3>
+        <p class="text-3xl font-bold text-indigo-600 mt-2">12</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-gray-500">Tasks Completed</h3>
+        <p class="text-3xl font-bold text-green-600 mt-2">89</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-gray-500">Pending Tasks</h3>
+        <p class="text-3xl font-bold text-yellow-500 mt-2">5</p>
+      </div>
+
+    </div>
+
+    <!-- Profile Section -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h3 class="text-xl font-semibold mb-4">Profile Information</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-gray-500 text-sm">Name</label>
+          <p class="font-medium">Ayush Bansal</p>
+        </div>
+
+        <div>
+          <label class="text-gray-500 text-sm">Role</label>
+          <p class="font-medium">Full Stack Developer</p>
+        </div>
+
+        <div>
+          <label class="text-gray-500 text-sm">Email</label>
+          <p class="font-medium">ayush@example.com</p>
+        </div>
+
+        <div>
+          <label class="text-gray-500 text-sm">Account Status</label>
+          <p class="font-medium text-green-600">Active</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-4">
+    © 2026 Acoustte Digital Services
+  </footer>
+
+</body>
+</html>
