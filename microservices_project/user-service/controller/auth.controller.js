@@ -51,7 +51,7 @@ exports.validateLogin = async (req, res) => {
         res.cookie("token", token, {
           maxAge: 6 * 60 * 60 * 1000,
         });
-        return res.redirect('/dashboard');
+        return res.redirect('/user/dashboard');
       }
     }
     return res.send("something went wrong");
